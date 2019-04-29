@@ -4,10 +4,7 @@
 		<title>Flourish</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script
-				src="https://code.jquery.com/jquery-3.4.0.min.js"
-				integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 		<style>
 			body,html{
@@ -27,8 +24,25 @@
 				object-fit:cover;
 				object-position:center;
 			}
+			
+			#splash_hero div{
+				width:100%;height:100%;
+				position:absolute;
+				top:0;left:0;
+			}
+			
+			#splash_hero div img{
+				width:130%;
+				height:130%;
+				left:-15vw !important;
+				top:-15vh !important;
+			}
 
-			#splash_hero img:last-child{
+			#splash_hero div img:last-child{
+				width:100%;
+				height:100%;
+				left:0 !important;
+				top:0 !important;
 				object-fit:contain;
 			}
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -65,27 +79,9 @@
 
 			.faceNames p img{
 				width:150px;
-				/*height:200px;
-				object-fit:contain;
-				object-position:center;
-				vertical-align:middle;*/
 				display:block;
 				margin:0 auto;
 			}
-			/*.faceNames p span{
-				height:200px;
-				display:inline-block;
-				vertical-align:middle;
-			}
-
-			.faceNames p:nth-child(odd) img{
-				position:relative;
-				left:calc(60% - 200px);
-			}
-			.faceNames p:nth-child(odd) span{
-				position:relative;
-				right:200px;
-			}*/
 
 			#awardWinning{
 				position:absolute;
@@ -114,18 +110,28 @@
 				padding: 0 20px;
 				opacity:0.8;
 				font-size:80%;
+				pointer-events: none;
 			}
 		</style>
-		<!--script>
-			const tilt = $('.js-tilt').tilt();
-		</script-->
 	</head>
 	<body>
 		<div id="splash_hero">
-			<img src="splash/flourish_explode_00.png" alt="" />
-			<img src="splash/flourish_explode_01.png" alt="" />
-			<div data-tilt style="width:100%;height:100%;transform-style: preserve-3d;">
-			<img alt="" src="splash/flourish_explode_02.png" style="transform:translateZ(-160px);" /><img alt="" src="splash/flourish_explode_03.png" style="transform:translateZ(-140px);" /><img alt="" src="splash/flourish_explode_04.png" style="transform:translateZ(-120px);" /><img alt="" src="splash/flourish_explode_05.png" style="transform:translateZ(-100px);" /><img alt="" src="splash/flourish_explode_06.png" style="transform:translateZ(-80px);" /><img alt="" src="splash/flourish_explode_07.png" style="transform:translateZ(-60px);" /><img alt="" src="splash/flourish_explode_08.png" style="transform:translateZ(-40px);" /><img alt="" src="splash/flourish_explode_09.png" style="transform:translateZ(-20px);" /><img alt="" src="splash/flourish_explode_10.png" style="transform:translateZ(0px);" /><img alt="" src="splash/flourish_explode_11.png" style="transform:translateZ(20px);" /><img alt="" src="splash/flourish_explode_12.png" style="transform:translateZ(40px);" /><img alt="" src="splash/flourish_explode_13.png" style="transform:translateZ(60px);" /><img alt="" src="splash/flourish_explode_14.png" style="transform:translateZ(80px);" />
+			<img src="sp/flourish_explode_00.png" alt="" />
+			<img src="sp/flourish_explode_01.png" alt="" />
+			<div id="scene">
+				<img alt="" data-depth="1.3" src="sp/flourish_explode_02.png" />
+				<img alt="" data-depth="1.2" src="sp/flourish_explode_03.png" />
+				<img alt="" data-depth="1.1" src="sp/flourish_explode_04.png" />
+				<img alt="" data-depth="1.0" style="transform:scale(3);" src="sp/flourish_explode_05.png" />
+				<img alt="" data-depth="0.9" src="sp/flourish_explode_06.png" />
+				<img alt="" data-depth="0.8" src="sp/flourish_explode_07.png" />
+				<img alt="" data-depth="0.7" src="sp/flourish_explode_08.png" />
+				<img alt="" data-depth="0.6" src="sp/flourish_explode_09.png" />
+				<img alt="" data-depth="0.5" src="sp/flourish_explode_10.png" />
+				<img alt="" data-depth="0.4" src="sp/flourish_explode_11.png" />
+				<img alt="" data-depth="0.3" src="sp/flourish_explode_12.png" />
+				<img alt="" data-depth="0.2" src="sp/flourish_explode_13.png" />
+				<img alt="" data-depth="0.1" src="sp/flourish_explode_14.png" />
 			</div>
 		</div>
 		<h1 class="pageTitle">Flourish</h1>
@@ -166,6 +172,8 @@
 			</p>
 		</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+		<script>
+		var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);</script>
 	</body>
 </html>
