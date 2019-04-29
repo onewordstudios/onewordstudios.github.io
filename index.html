@@ -2,43 +2,170 @@
 <html>
 	<head>
 		<title>Flourish</title>
-		<style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<script
+				src="https://code.jquery.com/jquery-3.4.0.min.js"
+				integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+		<style>
+			body,html{
+				margin:0;padding:0;
+				overflow-x:hidden;
+			}
+
+			#splash_hero{
+				width:100%;height:100vh;
+				position:relative;
+				overflow:hidden;
+			}
+			#splash_hero img{
+				position:absolute;
+				left:0;top:0;
+				width:100%;height:100%;
+				object-fit:cover;
+				object-position:center;
+			}
+
+			#splash_hero img:last-child{
+				object-fit:contain;
+			}
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-			img{
-				width:100vw;
-				height:100vh;
-				object-fit:cover;
-				object-position:center center;
+			body{
+				background:rgb(21,48,73);
+				color:white;
+				font-family:"Montserrat", sans-serif !important;
 			}
-			body, html{
-				width:100%;height:100%;
-				overflow:hidden;
-				padding:0;margin:0;
+
+			.pageTitle{
+				text-align:center;
+				margin: 20vh 0;
+				font-size:10vw;
 			}
 
 			p{
-				position:fixed;
-				text-align:center;
-				bottom:calc(50vh - 120px);
+				margin: 20px 5vw;
+				font-size:125%;
+			}
+
+			.bigBg{
+				background-position: center;
+				background-size:cover;
 				width:100%;
+				margin:100px 0 0 0;padding:0;
+				background-attachment:fixed;
+			}
+			.bigBg p{
+				padding-top:30vh;
+				padding-bottom:30vh;
+				margin-bottom:0;
+			}
 
-				font-size:130%;
+			.faceNames p img{
+				width:150px;
+				/*height:200px;
+				object-fit:contain;
+				object-position:center;
+				vertical-align:middle;*/
+				display:block;
+				margin:0 auto;
+			}
+			/*.faceNames p span{
+				height:200px;
+				display:inline-block;
+				vertical-align:middle;
+			}
 
-				color:white;
-				font-family:"Montserrat", sans-serif;
+			.faceNames p:nth-child(odd) img{
+				position:relative;
+				left:calc(60% - 200px);
+			}
+			.faceNames p:nth-child(odd) span{
+				position:relative;
+				right:200px;
+			}*/
 
-				text-shadow: 0 0 5px black;
-
-				margin:5px 0;
+			#awardWinning{
+				position:absolute;
+				top:80vh;
+				text-align:center;
+				margin:0 auto;
+				width:calc(100% - 40px);
+				padding: 0 20px;
+			}
+			#awardWinning a{
+				color:white !important;
+				text-decoration: none;
+			}
+			#awardWinning a:hover{
+				text-decoration: underline;
+			}
+			#awardWinning a:active{
+				text-decoration: none;
+			}
+			#studioName{
+				position:absolute;
+				top:calc(100vh - 40px);
+				text-align:center;
+				margin:0 auto;
+				width:calc(100% - 40px);
+				padding: 0 20px;
+				opacity:0.8;
+				font-size:80%;
 			}
 		</style>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<script>
+			const tilt = $('.js-tilt').tilt();
+		</script>
 	</head>
 	<body>
-		<img src="gameLogo.png" alt="Flourish game logo" />
-		<p>More information coming soon...</p>
+		<div id="splash_hero">
+			<img src="splash/flourish_explode_00.png" alt="" />
+			<img src="splash/flourish_explode_01.png" alt="" />
+			<div data-tilt style="width:100%;height:100%;transform-style: preserve-3d;">
+			<img alt="" src="splash/flourish_explode_02.png" style="transform:translateZ(-160px);" /><img alt="" src="splash/flourish_explode_03.png" style="transform:translateZ(-140px);" /><img alt="" src="splash/flourish_explode_04.png" style="transform:translateZ(-120px);" /><img alt="" src="splash/flourish_explode_05.png" style="transform:translateZ(-100px);" /><img alt="" src="splash/flourish_explode_06.png" style="transform:translateZ(-80px);" /><img alt="" src="splash/flourish_explode_07.png" style="transform:translateZ(-60px);" /><img alt="" src="splash/flourish_explode_08.png" style="transform:translateZ(-40px);" /><img alt="" src="splash/flourish_explode_09.png" style="transform:translateZ(-20px);" /><img alt="" src="splash/flourish_explode_10.png" style="transform:translateZ(0px);" /><img alt="" src="splash/flourish_explode_11.png" style="transform:translateZ(20px);" /><img alt="" src="splash/flourish_explode_12.png" style="transform:translateZ(40px);" /><img alt="" src="splash/flourish_explode_13.png" style="transform:translateZ(60px);" /><img alt="" src="splash/flourish_explode_14.png" style="transform:translateZ(80px);" />
+			</div>
+		</div>
+		<h1 class="pageTitle">Flourish</h1>
+		<h2 id="studioName">onewordstudios</h2>
+
+		<h2 id="awardWinning">Winner of the Faculty Choice Award at <a href="https://www.cis.cornell.edu/boom-2019-award-recipients">BOOM 2019</a><!--img src="https://www.cis.cornell.edu/sites/default/files/BOOM%20Logo.png" alt="BOOM logo" style="max-width:100px;vertical-align:middle;" /--></h2>
+
+		<p>Ages after Homo sapiens abandoned an exhausted Terra, life has just begun to reclaim its place on the surface. With limited resources, sunlight, and space, spread roots and grow towards the sky to become the last plant standing.</p>
+
+		<div class="bigBg" style="background-image:url('bg_d_static.png');">
+			<p>Flourish is a turn-based strategy game developed developed by students in the Game Design Initiative at Cornell. In the world of Flourish, humans have abandoned Terra and life is beginning to reclaim its place on the surface. Players take on the role of a plant, attempting to grow in an environment with a scarcity of resources and a plethora of competition. Using biomass, water, and sunlight, the players must spread roots and grow towards the sun. At the same time, players must keep a watch on rival plants while balancing their own resources to prevent decay.</p>
+		</div>
+
+
+		<div style="background:white;padding: 50px 0;color:black;font-size:100%;text-align:center;" class="faceNames">
+			<h2><img alt="onewordstudios" style="max-width:30vw;" src="/School/flourish/studioSmall.png" /></h2>
+			<p>
+				<img src="faces/chang.png" alt="Demi Chang" />
+				<span>Aesthetic Mom (Design Lead)</span>
+			</p><p>
+				<img src="faces/cuite.png" alt="Aidan Cuite" />
+				<span>Mega Music Man (Composer)</span>
+			</p><p>
+				<img src="faces/saxena.png" alt="Aashna Saxena" />
+				<span>Plant Master (Programmer)</span>
+			</p><p>
+				<img src="faces/sorenson.png" alt="Samuel Sorenson" />
+				<span>AI Hackerman (Programmer)</span>
+			</p><p>
+				<img src="faces/xing.png" alt="Michael Xing" />
+				<span>Repository Despot (Software Lead)</span>
+			</p><p>
+				<img src="faces/yao.png" alt="Jeffrey" />
+				<span>Donut Man (Programmer)</span>
+			</p><p>
+				<img src="faces/zhang.png" alt="Wendy" />
+				<span>Project Overlord (Project Lead)</span>
+			</p>
+		</div>
+
 	</body>
 </html>
