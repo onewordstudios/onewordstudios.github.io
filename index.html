@@ -68,7 +68,7 @@
 				background-position: center;
 				background-size:cover;
 				width:100%;
-				margin:100px 0 0 0;padding:0;
+				margin:50px 0 0 0;padding:0;
 				background-attachment:fixed;
 			}
 			.bigBg p{
@@ -149,6 +149,38 @@
 				font-size:80%;
 				pointer-events: none;
 			}
+			
+			
+			.downloadLinks{
+				text-align:center;
+				margin-bottom:0;
+				margin-top:100px;
+			}
+			.downloadLinks a{
+				display:inline-block;
+				padding: 20px 30px;
+				font-size: 150%;
+				background:#16a085;
+				cursor:pointer;
+				color:white;
+				text-decoration: none;
+				opacity:1;
+				transition: opacity 0.1s ease-in-out;
+			}
+			.downloadLinks a:hover{
+				opacity:0.9;
+			}
+			.downloadLinks a:active{
+				opacity:1;
+			}
+			.downloadLinks a:first-child{
+				margin-right:20px;
+			}
+			.downloadLinks a:last-child{
+				font-size:100%;
+				margin-top:10px;
+				padding:15px 20px;
+			}
 		</style>
 	</head>
 	<body>
@@ -174,9 +206,15 @@
 		<h1 class="pageTitle">Flourish</h1>
 		<h2 id="studioName">onewordstudios</h2>
 
-		<h2 id="awardWinning">Winner of the Faculty Choice Award at <a href="https://www.cis.cornell.edu/boom-2019-award-recipients">BOOM 2019</a><!--img src="https://www.cis.cornell.edu/sites/default/files/BOOM%20Logo.png" alt="BOOM logo" style="max-width:100px;vertical-align:middle;" /--></h2>
+		<h2 id="awardWinning">Winner of the Faculty Choice Award at <a href="https://www.cis.cornell.edu/boom-2019-award-recipients">BOOM 2019</a><span style="display:block;margin-top:10px;">An Audience Choice Game at GDIAC 2019</span></h2>
 
 		<p>Ages after Homo sapiens abandoned an exhausted Terra, life has just begun to reclaim its place on the surface. With limited resources, sunlight, and space, spread roots and grow towards the sky to become the last plant standing.</p>
+		
+		<p class="downloadLinks">
+			<a href="https://drive.google.com/file/d/1rr5fFJiP8rq_yt5RpskqRshbRKp24UF3/view?usp=sharing">Download for Windows</a>
+			<a href="https://drive.google.com/file/d/1KGst6-bv-VsbdUjJnhOSKcm7NezXak8n/view?usp=sharing">Download for Mac</a><br />
+			<a href="https://drive.google.com/file/d/1hJZR6hQuDo-choT8VEZNJcpVBI1w31qB/view?usp=sharing">Download Jar (Requires Java 8+)</a>
+		</p>
 
 		<div class="bigBg" style="background-image:url('bg_d_static.png');">
 			<p>Flourish is a turn-based strategy game developed developed by students in the Game Design Initiative at Cornell. In the world of Flourish, humans have abandoned Terra and life is beginning to reclaim its place on the surface. Players take on the role of a plant, attempting to grow in an environment with a scarcity of resources and a plethora of competition. Using biomass, water, and sunlight, the players must spread roots and grow towards the sun. At the same time, players must keep a watch on rival plants while balancing their own resources to prevent decay.</p>
