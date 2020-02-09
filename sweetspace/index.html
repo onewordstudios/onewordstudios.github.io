@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SweetSpace - onewordstudios</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="SweetSpace, an upcoming multiplayer cooperative action game for mobile devices"/>
+		<link rel="shortcut icon" href="studioBlack.png"/>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+			body{
+				background:rgb(3,5,17);
+				color:white;
+				font-family:"Montserrat", sans-serif !important;
+			}
+			
+			body,html{
+				margin:0;padding:0;
+				height: 100vh;
+				overflow:hidden;
+			}
+
+			#splash_hero{
+				width:100%;height:100vh;
+				position:relative;
+				overflow:hidden;
+				margin-bottom:0;
+			}
+			#splash_hero img{
+				position:absolute;
+				left:0;top:0;
+				width:100%;height:100%;
+				object-fit:cover;
+				object-position:center;
+			}
+			
+			#splash_hero div{
+				width:100%;height:100%;
+				position:absolute;
+				top:0;left:0;
+			}
+			
+			#splash_hero div img{
+				width:110%;
+				height:110%;
+				left:-5vw !important;
+				top:-5vh !important;
+			}
+
+			#splash_hero div img:last-child{
+				width:100%;
+				height:100%;
+				left:0 !important;
+				top:0 !important;
+				object-fit:contain;
+			}
+
+
+			#awardWinning{
+				position:absolute;
+				bottom: 130px;
+				text-align:center;
+				margin:0 auto;
+				width:calc(100% - 40px);
+				padding: 0 20px;
+			}
+			#studioName{
+				position:absolute;
+				bottom: -40px;
+				text-align:center;
+				margin:0 auto;
+				width:calc(100% - 40px);
+				padding: 0 20px;
+			}
+			
+			#studioName img{
+				height: 200px;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="splash_hero">
+			<div id="scene">
+				<img alt="" data-depth="0.01" src="l1.png" />
+				<img alt="" data-depth="0.02" src="l2.png" />
+				<img alt="" data-depth="0.03" src="l3.png" />
+				<img alt="Flourish" data-depth="0.04" src="l4.png" />
+			</div>
+		</div>
+		
+		<h2 id="studioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
+
+		<h2 id="awardWinning">A Cooperative Action Game for Android and iOS<br />Coming August 2020</h2>
+
+		<script>
+			const scene = document.getElementById('scene');
+			const parallaxInstance = new Parallax(scene, {
+				frictionX:0.5,
+				frictionY:0.5
+			});
+		</script>
+	</body>
+</html>
