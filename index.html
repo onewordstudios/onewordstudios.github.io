@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Flourish</title>
+		<title>onewordstudios</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Official website of onewordstudios"/>
 		<link rel="shortcut icon" href="/favicon.png"/>
@@ -11,496 +11,97 @@
 		<style>
 			body,html{
 				margin:0;padding:0;
-				overflow-x:hidden;
-			}
-
-			#splash_hero{
-				width:100%;height:100vh;
-				position:relative;
 				overflow:hidden;
-				margin-bottom:0;
-			}
-			#splash_hero img{
-				position:absolute;
-				left:0;top:0;
-				width:100%;height:100%;
-				object-fit:cover;
-				object-position:center;
-			}
-			
-			#splash_hero div{
-				width:100%;height:100%;
-				position:absolute;
-				top:0;left:0;
-			}
-			
-			#splash_hero div img{
-				width:130%;
-				height:130%;
-				left:-15vw !important;
-				top:-15vh !important;
 			}
 
-			#splash_hero div img:last-child{
-				width:100%;
-				height:100%;
-				left:0 !important;
-				top:0 !important;
-				object-fit:contain;
-			}
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 			body{
-				background:rgb(21,48,73);
+				background:black;
 				color:white;
 				font-family:"Montserrat", sans-serif !important;
+				
+				user-select: none;
 			}
-
-			.pageTitle{
-				text-align:center;
-				margin: 20vh 0;
-				font-size:10vw;
-			}
-
-			p{
-				margin: 20px 5vw;
-				font-size:125%;
-			}
-
-			.bigBg{
-				background-position: center;
-				background-size:cover;
+			
+			section {
 				width:100%;
-				margin:50px 0 0 0;padding:0;
-				background-attachment:fixed;
-			}
-			.bigBg > p, .bigBg > .wrapper{
-				padding-top:30vh;
-				padding-bottom:30vh;
-				margin-bottom:0;
-			}
-
-			
-			.faceNames h2 img{
-				width:30vw;
-				max-width:350px;
-				min-width:250px;
+				height: 100vh;
 			}
 			
-			.faceNames a img{
-				width:150px;
-				display:block;
-				margin:0 auto;
+			header {
+				height: 20vh;
+				text-align: center;
+				background: linear-gradient(to top, rgba(0,0,0,0),rgba(0,0,0,1));
+				
+				position: fixed;
+				top:0;left:0;
+				width: 100%;
+				
+				pointer-events: none;
+				
+				z-index: 4;
 			}
 			
-			.faceNames a{
-				display:inline-block;
-				width:350px;
-				max-width:100%;
-				text-align:center;
-				color:black;
-				text-decoration: none;
+			#studio {
+				height: 150%;
 				position:relative;
-				padding: 20px 0;
+				top: -25%;
 			}
 			
-			.faceNames a::before{
-				background:rgba(0,0,0,0.1);
-				content:'';
-				width:100%;height:100%;
+			a{
+				width: 50%;
+				display:inline-block;
+				height:100%;
+				position: relative;
+				
+				transform:scale(1);
+				transition: transform 0.2s ease-in-out;
+			}
+			
+			a img{
 				position:absolute;
 				top:0;left:0;
-				pointer-events: none;
-				
-				opacity:0;
-				transition: opacity 0.2s ease-in-out;
 			}
 			
-			.faceNames a:hover::before{
-				opacity:1;
+			a img:first-child{
+				width:100%;
+				height: 100%;
+				object-fit:cover;
 			}
-			.faceNames a:active::before{
-				opacity:0;
+			
+			a img:last-child {
+				width:100%;
+				height:100%;
+				object-fit: contain;
+				
+				transform:scale(1);
+				transition: transform 0.2s ease-in-out;
+			}
+			
+			a:hover {
+				transform: scale(1.05);
+				z-index: 2;
+			}
+			
+			a:hover img:last-child{
+				transform: scale(0.9);
+			}
+			
+			a:active img:last-child{
+				transform: scale(1);
+				transition: transform 0.1s ease-in-out;
 			}
 
-			#awardWinning{
-				position:absolute;
-				top:80vh;
-				text-align:center;
-				margin:0 auto;
-				width:calc(100% - 40px);
-				padding: 0 20px;
-			}
-			#awardWinning a{
-				color:white !important;
-				text-decoration: none;
-			}
-			#awardWinning a:hover{
-				text-decoration: underline;
-			}
-			#awardWinning a:active{
-				text-decoration: none;
-			}
-			#studioName{
-				position:absolute;
-				top:calc(100vh - 40px);
-				text-align:center;
-				margin:0 auto;
-				width:calc(100% - 40px);
-				padding: 0 20px;
-				opacity:0.8;
-				font-size:80%;
-				pointer-events: none;
-			}
-			
-			
-			.downloadLinks{
-				text-align:center;
-				margin-bottom:80px;
-				margin-top:100px;
-			}
-			.downloadLinks a{
-				display:inline-block;
-				padding: 20px 30px;
-				font-size: 150%;
-				background:#16a085;
-				cursor:pointer;
-				color:white;
-				text-decoration: none;
-				opacity:1;
-				transition: opacity 0.1s ease-in-out;
-				margin-bottom: 10px;
-			}
-			.downloadLinks a:hover{
-				opacity:0.9;
-			}
-			.downloadLinks a:active{
-				opacity:1;
-			}
-			.downloadLinks a:last-child{
-				font-size:100%;
-				/*margin-top:10px;*/
-				padding:15px 20px;
-			}
-			.downloadLinks img{
-				max-height:30px;
-				filter:invert(100%);
-				transform:translate(-5px,3px);
-				margin-right:10px;
-			}
-			.downloadLinks a:last-child img{
-				max-height:20px;
-				transform:translate(0,3px);
-			}
-			
-			#trailerFrame{
-				width:80vw;
-				height:45vw;
-				margin:0 auto;
-				display:block;
-				margin-top:0;
-			}
-			
-			#trailerFrameWrap{
-				padding: 100px 0;
-				background-image:url('bg/bg_b_static.png');
-				margin:0;
-			}
-			
-			#firstText{
-				background-color:rgb(190,230,245);
-				background-image:url('bg/main_menu_bg.png');
-				color:black;
-				background-attachment: scroll;
-				background-position:center left;
-				background-size:150%;
-				text-align:right;
-			}
-			#firstText p{
-				max-width:40vw;
-				margin-left:auto;
-				/*max-height:30vw;*/
-				text-align:right;
-			}
-			
-			h1{
-				text-align: center;
-				margin:100px 0;
-				font-size:400%;
-			}
-			
-			.blueBg h1{
-				font-size:250%;
-				margin-bottom:30px;
-			}
-			.blueBg{
-				padding-bottom:100px;
-			}
-			.blueBg h2{
-				font-size:150%;
-				text-align: center;
-			}
-			
-			#resWrap > p{
-				display:inline-block;
-				background:rgba(0,0,0,0.5);
-				padding: 50px;
-				text-align: center;
-			}
-			
-			#resWrap > div {
-				background:rgba(0,0,0,0.5);
-				padding: 50px 0;
-				margin-top:50px;
-			}
-			
-			table{
-				max-width:80%;
-				margin:0 auto;
-			}
-			
-			table .span{
-				background:#bdc3c7;
-				color:black;
-				padding: 10px;
-				margin-top:0px;
-				opacity:0.5;
-			}
-			
-			table .span h3{
-				margin:0;
-			}
-			
-			table h2{
-				margin-bottom:5px;
-			}
-			
-			#plantSide{
-				background-image:url('bg/bg_d_static.png');position:relative;
-			}
-			#plantSide img{
-				position:absolute;max-width:30vw;bottom:-20px;right:0;
-			}
-			#plantSide p{
-				max-width:65vw;
-			}
-			
-			@media(max-width:715px){
-				#awardWinning{
-					transform:translateY(-35px);
-				}
-				
-				
-				#firstText{
-					background-color:black;
-					background-image:url('bg/main_menu_bg.png');
-					color:white;
-					background-attachment: fixed;
-					background-position:center center;
-					background-size:cover;
-					text-align:center;
-					padding: 100px 20px;
-				}
-				#firstText p{
-					max-width:60vw;
-					margin: 0 auto;
-					padding:40px;
-					text-align:center;
-					background:rgba(0,0,0,0.5);
-				}
-				
-				#plantSide p{
-					max-width:100%;
-				}
-				#plantSide img{
-					right:calc(50% - 80px);
-					max-width:160px;
-				}
-			}
 		</style>
 	</head>
 	<body>
-		<div id="splash_hero">
-			<img src="sp/flourish_explode_00.png" alt="" />
-			<img src="sp/flourish_explode_01.png" alt="" />
-			<div id="scene">
-				<img alt="" data-depth="1.3" src="sp/flourish_explode_02.png" />
-				<img alt="" data-depth="1.2" src="sp/flourish_explode_03.png" />
-				<img alt="" data-depth="1.1" src="sp/flourish_explode_04.png" />
-				<img alt="" data-depth="1.0" src="sp/flourish_explode_05.png" />
-				<img alt="" data-depth="0.9" src="sp/flourish_explode_06.png" />
-				<img alt="" data-depth="0.8" src="sp/flourish_explode_07.png" />
-				<img alt="" data-depth="0.7" src="sp/flourish_explode_08.png" />
-				<img alt="" data-depth="0.6" src="sp/flourish_explode_09.png" />
-				<img alt="" data-depth="0.5" src="sp/flourish_explode_10.png" />
-				<img alt="" data-depth="0.4" src="sp/flourish_explode_11.png" />
-				<img alt="" data-depth="0.3" src="sp/flourish_explode_12.png" />
-				<img alt="" data-depth="0.2" src="sp/flourish_explode_13.png" />
-				<img alt="Flourish" data-depth="0.1" src="sp/flourish_explode_14.png" />
-			</div>
-		</div>
-				
-		<!--h1 class="pageTitle">Flourish</h1-->
-		<h2 id="studioName">onewordstudios</h2>
-
-		<h2 id="awardWinning">Winner of the Faculty Choice Award at <a href="https://www.cis.cornell.edu/boom-2019-award-recipients">BOOM 2019</a><span style="display:block;margin-top:10px;">An Audience Choice Game at GDIAC 2019</span></h2>
-
-		
-		<div class="downloadLinks">
-
-			<p style="margin-bottom:70px;">Ages after Homo sapiens abandoned an exhausted Terra, life has just begun to reclaim its place on the surface. With limited resources, sunlight, and space, spread roots and grow towards the sky to become the last plant standing.</p>
-			
-			<p>
-				<a href="download/win.html" style="margin-top:10px;margin-right:5px;"><img src="icons/windows.svg" alt="" />Download for Windows</a>
-				<a href="download/mac.html"><img src="icons/mac.svg" alt="" />Download for Mac</a><br />
-				<a href="https://github.com/onewordstudios/onewordstudios.github.io/releases/download/v1.0.0/flourish-fig-showcase.jar"><img src="icons/java.png" alt="" />Download Jar (Requires Java 8+)</a>
-			</p>
-		</div>
-		
-		<div id="trailerFrameWrap" class="bigBg">
-			<iframe id="trailerFrame" src="https://www.youtube.com/embed/cDf3jhWNbtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-		
-		<h1>Nurture Your Plant</h1>
-
-		<div class="bigBg" id="firstText">
-			<p>Flourish is a turn-based strategy game where players take on the role of a plant desperately trying to survive on an exhausted and depleted Terra. In an environment scarce on resources but filled with competition, fight against all odds to survive and thrive.<!--developed by students in the Game Design Initiative at Cornell. In the world of Flourish, humans have abandoned an exhausted Terra and life is beginning to reclaim its place on the surface. Players take on the role of a plant , attempting to grow in an environment with a scarcity of resources and a plethora of competition.<!-- Using biomass, water, and sunlight, the players must spread roots and grow towards the sun. At the same time, players must keep a watch on rival plants while balancing their own resources to prevent decay.--></p>
-		</div>
-		
-		<h1>Gather Resources</h1>
-		
-		<div class="bigBg" style="background-image:url('bg/bg_a_static.png');">
-			<div class="wrapper" id="resWrap">
-				
-				<div style="display:table;width:100%;">
-					<div style="width:100%;text-align:center;display:table-caption;background:rgba(0,0,0,0.5);padding-top:50px;"><p>Biomass, water, and sunlight must be balanced to survive.<br />Resources are consumed to grow and to sustain your plant's size.</p></div>
-					<div style="display:table-row;">
-						<p style="display:table-cell;vertical-align: middle;padding-left:5vw;width:75vw;">Collect sunlight from the sky by spreading your branches. Only the green, leafy portions of a plant will collect sun. Grow to cover the opponent plant and starve them out of sunlight.</p>
-						<img src="icons/res-sun.png" alt="Sunlight" style="display:table-cell;max-width:15vw;vertical-align: middle;" />
-					</div>
-					<div style="display:table-row;">
-						<p style="display:table-cell;vertical-align: middle;padding-left:5vw;width:75vw;">Collect water and biomass by growing roots adjacent to them underground. Resource collection occurs at the beginning of each round. Water is renewable, but biomass will slowly deplete over time. Be careful - if you grow your roots directly into a biomass or water tile, the resource will be destroyed!</p>
-						<p style="display:table-cell;vertical-align: middle;"><img src="icons/res-water.png" alt="Water" style="max-width:7vw;" />
-						<img src="icons/res-biomass.png" alt="Biomass" style="max-width:7vw;" />
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<h1>Outsmart Your Opponents</h1>
-		
-		<div class="bigBg" id="plantSide">
-			<p>The larger a plant is, the more sunlight it needs to stay alive. In addition, it takes more water to support more branches and more biomass to support more roots. If a plant doesn't have enough water or biomass, its branches will begin to decay. If it lacks sunlight, its roots will decay. A plant dies when it decays away entirely. Use this to your advantage by starving your opponents of resources until they die - but be careful, less you decay away yourself.</p>
-			<img src="icons/big-plant.png" alt="" />
-		</div>
-		
-		<h1>Reclaim the Planet</h1>
-		
-		<div class="bigBg" style="background-image:url('bg/bg_e_static.png');">
-			<p style="text-align: center;padding-left:10vw;padding-right:10vw;">Weather the elements and expand your plant. Explore new locations and repopulate the planet. Win by becoming the last plant standing.</p>
-		</div>
-		
-		
-		<div class="blueBg" style="padding-bottom:50px;">
-			<h1>System Requirements</h1>
-			<table style="width:100%;">
-				<tr>
-					<th><h2>Windows</h2></th>
-					<th><h2>macOS</h2></th>
-				</tr>
-				<tr>
-					<th colspan="2" class="span"><h3>Minimum</h3></th>
-				</tr>
-				<tr>
-					<td>CPU: Yes</td>
-					<td>CPU: Yes</td>
-				</tr>
-				<tr>
-					<td>Memory: Some</td>
-					<td>Memory: Some</td>
-				</tr>
-				<tr>
-					<td>Graphics: Colors would be nice</td>
-					<td>Graphics: Colors would be nice</td>
-				</tr>
-				<tr>
-					<td>Sound: You can hum along if you want</td>
-					<td>Sound: You can hum along if you want</td>
-				</tr>
-				<tr>
-					<td>Display: 720p Widescreen</td>
-					<td>Display: 720p Widescreen</td>
-				</tr>
-				<tr>
-					<td>OS: Preferably the Start button no longer reads “Start”</td>
-					<td>OS: Preferably the Apple logo no longer has a rainbow on it</td>
-				</tr>
-				<tr>
-					<th colspan="2" class="span"><h3>Recommended</h3></th>
-				</tr>
-				<tr>
-					<td>CPU: 24 core Intel Xeon E7</td>
-					<td>CPU: 18 core Intel Xeon W</td>
-				</tr>
-				<tr>
-					<td>Memory: All</td>
-					<td>Memory: All</td>
-				</tr>
-				<tr>
-					<td>Graphics: Nvidia GeForce GTX Titan X</td>
-					<td>Graphics: Radeon Pro Vega 64X</td>
-				</tr>
-				<tr>
-					<td>Sound: Surround Sound 7.1</td>
-					<td>Sound: Surround Sound 7.1</td>
-				</tr>
-				<tr>
-					<td>Display: 8K 32:9 ultrawide monitor</td>
-					<td>Display: 8K 32:9 ultrawide monitor</td>
-				</tr>
-				<tr>
-					<td>OS: Windows Server 2019 Enterprise</td>
-					<td>OS: macOS Mojave + macOS Server</td>
-				</tr>
-			</table>
-			<h2 style="margin-bottom:0;">Linux</h2>
-			<p style="font-size:95%;text-align: center;margin:5px 10vw 0 10vw;">If you can figure out how to install Linux, you can figure out how to run a jar.</p>
-		</div>
-
-		<div style="background:white;padding: 50px 0;color:black;font-size:100%;text-align:center;" class="faceNames">
-			<h2><img alt="onewordstudios" src="studioSmall.png" /></h2>
-			<p style="font-size:100%;">Flourish was developed by students in the Game Design Initiative at Cornell University.</p>
-			<a href="https://issuu.com/demichang.cd/docs/master_portfolio_2018_40p">
-				<img src="faces/chang.png" alt="Demi Chang" />
-				<span>Head Chef (Design Lead)</span>
-			</a><a href="https://www.facebook.com/aidan.cuite">
-				<img src="faces/cuite.png" alt="Aidan Cuite" />
-				<span>Mega Music Man (Composer)</span>
-			</a><a href="https://www.linkedin.com/in/aashnas91abb4122/">
-				<img src="faces/saxena.png" alt="Aashna Saxena" />
-				<span>Plant Master (Programmer)</span>
-			</a><a href="https://www.linkedin.com/in/sam-sorenson-2433a4174/">
-				<img src="faces/sorenson.png" alt="Samuel Sorenson" />
-				<span>AI Hackerman (Programmer)</span>
-			</a><a href="https://michaelxing.com">
-				<img src="faces/xing.png" alt="Michael Xing" />
-				<span>Repository Despot (Software Lead)</span>
-			</a><a href="https://www.linkedin.com/in/jeffreyjyao/">
-				<img src="faces/yao.png" alt="Jeffrey" />
-				<span>Donut Man (Programmer)</span>
-			</a><a href="https://www.linkedin.com/in/wenjia-zhang-4b6425156/">
-				<img src="faces/zhang.png" alt="Wendy" />
-				<span>Project Overlord (Project Lead)</span>
-			</a>
-		</div>
-
-		<script>
-			const scene = document.getElementById('scene');
-			const parallaxInstance = new Parallax(scene, {
-				frictionX:0.5,
-				frictionY:0.5
-			});
-		</script>
+		<header>
+			<img src="sweetspace/onewordstudios_logo_invert.png" alt="onewordstudios" id="studio" />
+		</header>
+		<section>
+			<a href="flourish/"><img src="flourish_bg.png" alt="" /><img src="flourish_logo.png" alt="Flourish" /></a><!--
+			--><a href="sweetspace/"><img src="sweetspace_bg.png" alt="" /><img src="sweetspace_logo.png" alt="SweetSpace" /></a>
+		</section>
 	</body>
 </html>
