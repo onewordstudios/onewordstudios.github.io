@@ -17,9 +17,11 @@
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 			body{
-				background:white;
-				color:black;
+				background:black;
+				color:white;
 				font-family:"Montserrat", sans-serif !important;
+				
+				user-select: none;
 			}
 			
 			section {
@@ -27,42 +29,71 @@
 				height: 100vh;
 			}
 			
+			header {
+				height: 20vh;
+				text-align: center;
+				background: linear-gradient(to top, rgba(0,0,0,0),rgba(0,0,0,1));
+				
+				position: fixed;
+				top:0;left:0;
+				width: 100%;
+				
+				pointer-events: none;
+				
+				z-index: 4;
+			}
+			
 			#studio {
-				max-width: 30vw;
-				max-height: 30vh;
-				position:absolute;
-				bottom:0;
-				left: 50%;
-				transform:translateX(-50%);
+				height: 150%;
+				position:relative;
+				top: -25%;
 			}
 			
 			a{
 				width: 50%;
-				display:block;
+				display:inline-block;
 				height:100%;
-				position:absolute;
-				left:0;top:0;
-				z-index:-1;
-				background:rgb(21,48,73);
-			}
-			a:last-child{
-				left:50%;
-				background:black;
+				position: relative;
 			}
 			
 			a img{
+				position:absolute;
+				top:0;left:0;
+			}
+			
+			a img:first-child{
 				width:100%;
 				height: 100%;
-				object-fit:contain;
+				object-fit:cover;
+			}
+			
+			a img:last-child {
+				width:100%;
+				height:100%;
+				object-fit: contain;
+				
+				transform:scale(1);
+				transition: transform 0.2s ease-in-out;
+			}
+			
+			a:hover img:last-child{
+				transform: scale(1.1);
+			}
+			
+			a:active img:last-child{
+				transform: scale(1);
+				transition: transform 0.1s ease-in-out;
 			}
 
 		</style>
 	</head>
 	<body>
+		<header>
+			<img src="sweetspace/onewordstudios_logo_invert.png" alt="onewordstudios" id="studio" />
+		</header>
 		<section>
-			<img src="flourish/studioSmall.png" alt="onewordstudios" id="studio" />
-			<a href="flourish/"><img src="flourish.png" alt="Flourish" /></a>
-			<a href="sweetspace/"><img src="sweetspace.png" alt="SweetSpace" /></a>
+			<a href="flourish/"><img src="flourish_bg.png" alt="" /><img src="flourish_logo.png" alt="Flourish" /></a><!--
+			--><a href="sweetspace/"><img src="sweetspace_bg.png" alt="" /><img src="sweetspace_logo.png" alt="SweetSpace" /></a>
 		</section>
 	</body>
 </html>
