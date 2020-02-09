@@ -54,6 +54,9 @@
 				display:inline-block;
 				height:100%;
 				position: relative;
+				
+				transform:scale(1);
+				transition: transform 0.2s ease-in-out;
 			}
 			
 			a img{
@@ -76,8 +79,13 @@
 				transition: transform 0.2s ease-in-out;
 			}
 			
+			a:hover {
+				transform: scale(1.05);
+				z-index: 2;
+			}
+			
 			a:hover img:last-child{
-				transform: scale(1.1);
+				transform: scale(0.9);
 			}
 			
 			a:active img:last-child{
