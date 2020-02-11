@@ -9,14 +9,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 		<style>
-			body,html{
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+			
+			body, html {
 				margin:0;padding:0;
 				overflow:hidden;
 			}
 
-			@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-			body{
+			body {
 				background:black;
 				color:white;
 				font-family:"Montserrat", sans-serif !important;
@@ -54,9 +54,6 @@
 				display:inline-block;
 				height:100%;
 				position: relative;
-				
-				transform:scale(1);
-				transition: transform 0.2s ease-in-out;
 			}
 			
 			a img{
@@ -76,21 +73,48 @@
 				object-fit: contain;
 				
 				transform:scale(1);
-				transition: transform 0.2s ease-in-out;
-			}
-			
-			a:hover {
-				transform: scale(1.05);
-				z-index: 2;
+				transition: transform 0.3s ease-in-out;
 			}
 			
 			a:hover img:last-child{
-				transform: scale(0.9);
+				transform: scale(1.05);
 			}
 			
 			a:active img:last-child{
-				transform: scale(1);
+				transform: scale(0.95);
 				transition: transform 0.1s ease-in-out;
+			}
+			
+			a h2 {
+				position: absolute;
+				color: white;
+				bottom: 7vh;
+				width: 100%;
+				text-align: center;
+				z-index: 3;
+				
+				transform: translateY(0);
+				transition: transform 0.3s ease-in-out;
+			}
+			
+			a span {
+				display: block;
+				opacity: 1;
+				padding: 0 10vw;
+				font-size: 85%;
+				margin-top: 3vh;
+				height: 5vh;
+				
+				opacity: 0;
+				transition: opacity 0.3s ease-in-out;
+			}
+			
+			a:hover h2 {
+				transform: translateY(-3vh);
+			}
+			
+			a:hover span {
+				opacity: 1;
 			}
 
 		</style>
@@ -100,8 +124,8 @@
 			<img src="sweetspace/onewordstudios_logo_invert.png" alt="onewordstudios" id="studio" />
 		</header>
 		<section>
-			<a href="flourish/"><img src="flourish_bg.png" alt="" /><img src="flourish_logo.png" alt="Flourish" /></a><!--
-			--><a href="sweetspace/"><img src="sweetspace_bg.png" alt="" /><img src="sweetspace_logo.png" alt="SweetSpace" /></a>
+			<a href="flourish/"><img src="flourish_bg.png" alt="" /><h2>Survive. Grow. Thrive.<span>The award-winning strategy game for PC and Mac</span></h2><img src="flourish_logo.png" alt="Flourish" /></a><!--
+			--><a href="sweetspace/"><img src="sweetspace_bg.png" alt="" /><h2>Coming Soon<span>to Android and iOS</span></h2><img src="sweetspace_logo.png" alt="SweetSpace" /></a>
 		</section>
 	</body>
 </html>
