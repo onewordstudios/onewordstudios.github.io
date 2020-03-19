@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>sweetspace - Server Status</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+			html, body {
+				overflow: hidden;
+				height: 100vh;
+			}
+
+			body {
+				font-family: "Montserrat", sans-serif;
+				background-image: url('https://onewordstudios.fun/sweetspace_bg.png');
+				background-size: cover;
+				background-position: center;
+				text-align: center;
+				color: white;
+				margin: 0;
+				padding: 0;
+			}
+
+			h1 {
+				font-size: 500%;
+				margin: 0;
+				transform: translateY(-30px);
+			}
+
+			h2 {
+				font-size: 150%;
+				margin: -50px 0 0 0;
+			}
+
+			.logo {
+				position: fixed;
+				bottom: 10px;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.logo img {
+				width: 150px;
+				height: 90px;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			h1 img {
+				margin-top: 50px;
+				height: 100px;
+				width: 800px;
+				object-fit: cover;
+			}
+
+			section {
+				padding: 20vh;
+				color: white !important;
+				font-size: 150%;
+			}
+			
+			@media(max-width: 800px) {
+				h1 img{
+					width: 100vw;
+				}
+				section {
+					padding: 20vh 10vh;
+				}
+			}
+		</style>
+		
+		<script>
+			function checkStatus() {
+				const statusInd = document.getElementById("statusInd");
+				const serverAddr = "https://cors-anywhere.herokuapp.com/http://sweetspace-server.herokuapp.com/";
+				
+				const cancel = window.setTimeout(showError, 10000);
+
+				const req = new XMLHttpRequest();
+				req.onreadystatechange = function() { 
+					if (req.readyState == 4 && req.status == 200) {
+						statusInd.textContent = "Online ✅";
+						window.clearTimeout(cancel);
+					}
+				}
+				req.open("GET", serverAddr, true);
+				req.send(null);
+				
+				function showError() {
+					statusInd.textContent = "Error ❌";
+					document.getElementById("errMsg").style.display = "block";
+					document.getElementById("errMsg").textContent = "Our server seems to be having issues. Please let us know via the Discord channel and we'll look into it. Thanks!";
+					req.abort();
+				}
+			}
+		</script>
+	</head>
+	<body onload="checkStatus()">
+		<p class="logo"><img
+				src="https://onewordstudios.fun/sweetspace/onewordstudios_logo_invert.png"
+				alt="onewordstudios" /></p>
+		<h1><img src="https://onewordstudios.fun/sweetspace/l4.png" alt="sweetspace" /></h1>
+		<h2>Server Status</h2>
+
+		<section>
+			<p id="statusInd">Establishing Connection...</p>
+			<p id="errMsg" style="font-size: 16px;display:none;"></p>
+		</section>
+	</body>
+</html>
