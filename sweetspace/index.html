@@ -12,7 +12,9 @@
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 			body{
-				background:rgb(3,5,17);
+				background-image:url('https://onewordstudios.fun/sweetspace_bg.png');
+				background-size: cover;
+				background-position: center;
 				color:white;
 				font-family:"Montserrat", sans-serif !important;
 			}
@@ -20,7 +22,7 @@
 			body,html{
 				margin:0;padding:0;
 				height: 100vh;
-				overflow:hidden;
+				overflow-x:hidden;
 			}
 
 			#splash_hero{
@@ -81,22 +83,151 @@
 			}
 			
 			
+			#topMain {
+				height: 100vh;
+				position:relative;
+			}
 			
+			.card {
+				text-align: center;
+				margin: 5vh 20vw;
+			}
+			
+			.leftCard img {
+				width: 40%;
+				float: left;
+			}
+			
+			.rightCard img {
+				width: 30%;
+				float: right;
+			}
+			
+			.card p {
+				display: flex;
+				height: 25vw;
+				justify-content: center;
+				align-items: center;
+				font-size: 125%;
+			}
+			
+			.card h2 {
+				clear:both;
+				font-size: 300%;
+			}
+			
+			#challenges {
+				padding: 0 5vw;
+			}
+			#challenges div{
+				width: 50%; display:inline-block;
+				text-align: center;
+				vertical-align: top;
+			}
+			#challenges div img {
+				max-width: 90%;
+			}
+			
+			#bottom {
+				font-size: 200%;
+				text-align: center;
+				margin: 20vh 0 0 0;
+			}
+			
+			#bottomHero {
+				width: 100%;
+			}
+			
+			#bottomStudioName {
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+			}
+			
+			#bottomStudioName img{
+				width: 10vw;
+				transform: translateY(57vw);
+			}
+			
+			@media(max-width: 700px) {
+				.card img {
+					float: none !important;
+				}
+				.card p {
+					display: block;
+					height: initial;
+				}
+				
+				#challenges div {
+					display: block;
+					width: 100%;
+				}
+				
+				#challenges {
+					margin-top: 100px;
+				}
+				
+			}
 		</style>
 	</head>
 	<body>
-		<div id="splash_hero">
-			<div id="scene">
-				<img alt="" data-depth="0.01" src="l1.png" />
-				<img alt="" data-depth="0.02" src="l2.png" />
-				<img alt="" data-depth="0.03" src="l3.png" />
-				<img alt="SweetSpace" data-depth="0.04" src="l4.png" />
+		<section id="topMain">
+			<div id="splash_hero">
+				<div id="scene">
+					<!--img alt="" data-depth="0.01" src="l1.png" />
+					<!--img alt="" data-depth="0.02" src="l2.png" /-->
+					<img alt="" data-depth="0.03" src="l3.png" />
+					<img alt="SweetSpace" data-depth="0.04" src="l4.png" />
+				</div>
 			</div>
-		</div>
+			
+			<h2 id="studioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
+	
+			<h2 id="awardWinning">A Cooperative Action Game for Android and iOS<br />Coming August 2020</h2>
+		</section>
 		
-		<h2 id="studioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
-
-		<h2 id="awardWinning">A Cooperative Action Game for Android and iOS<br />Coming August 2020</h2>
+		<section>
+			<p style="padding: 20vh 10vw;font-size: 150%;text-align:center;">Cosmic radiation is tearing through your ship, you and your friends are the only donuts who can stop it! Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
+		</section>
+		
+		<section class="card leftCard">
+			<h2>Tilt</h2>
+			<img src="imgs/tilt.png" alt="" />
+			<p>Tilt your phone left and right to roll your small donut around the ship. Roll over breaches of your color to fix them.</p>
+		</section>
+		
+		<section class="card rightCard">
+			<h2>Tap</h2>
+			<img src="imgs/tap.png" alt="" />
+			<p>Tap the screen to jump over obstacles.</p>
+		</section>
+		
+		<section class="card leftCard">
+			<h2>Talk</h2>
+			<img src="imgs/talk.png" alt="" />
+			<p>Talk to your shipmates to ask for help.</p>
+		</section>
+		
+		<section id="challenges">
+			<div>
+				<h2>Hull Breaches</h2>
+				<img src="imgs/breach.png" alt="" />
+				<p>Certain breaches can only be patched by certain members</p>
+			</div><div>
+				<h2>Locked Doors</h2>
+				<img src="imgs/door.png" alt="" />
+				<p>Doors can only be opened with the help of two members</p>
+			</div>
+		</section>
+		
+		<section id="bottom">
+			<p>Work together. Save your ship.<br />✦ Keep the galaxy sweet ✦</p>
+		</section>
+		
+		
+		<h2 id="bottomStudioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
+		<img src="https://camo.githubusercontent.com/05c2cf7ec17ec508315f8b8bb740e9df34925020/687474703a2f2f6f6e65776f726473747564696f732e66756e2f737765657473706163652f737765657473706163655f6865726f2e706e67" alt="SweetSpace" id="bottomHero" />
+		
 
 		<script>
 			const scene = document.getElementById('scene');
