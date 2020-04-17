@@ -63,6 +63,12 @@
 				font-size: 150%;
 			}
 			
+			#statusInd img {
+				max-height: 25px;
+				transform: translateY(5px);
+				margin-left: 5px;
+			}
+			
 			@media(max-width: 800px) {
 				h1 img{
 					width: 100vw;
@@ -78,7 +84,7 @@
 				const statusInd = document.getElementById("statusInd");
 				const serverAddr = "https://cors-anywhere.herokuapp.com/http://sweetspace-server.herokuapp.com/";
 				
-				const cancel = window.setTimeout(showError, 10000);
+				let cancel = window.setTimeout(showStartup, 1000);
 
 				const req = new XMLHttpRequest();
 				req.onreadystatechange = function() { 
@@ -89,6 +95,11 @@
 				}
 				req.open("GET", serverAddr, true);
 				req.send(null);
+				
+				function showStartup() {
+					document.getElementById("statusInd").innerHTML = 'Starting Server <img src="up.gif" alt="" />';
+					cancel = window.setTimeout(showError, 10000);
+				}
 				
 				function showError() {
 					statusInd.textContent = "Error ❌";
