@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>sweetspace - Beta</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+			html, body {
+				overflow-x: hidden;
+			}
+
+			body {
+				font-family: "Montserrat", sans-serif;
+				background-image: url('https://onewordstudios.fun/sweetspace_bg.png');
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				text-align: center;
+				color: white;
+				margin: 0;
+				padding: 0;
+			}
+
+			h1 {
+				font-size: 500%;
+				margin: 0;
+				transform: translateY(-30px);
+			}
+
+			h2 {
+				font-size: 300%;
+				margin: -50px 0 0 0;
+			}
+
+			.logo {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.logo img {
+				width: 150px;
+				height: 90px;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			h1 img {
+				margin-top: 50px;
+				height: 100px;
+				width: 800px;
+				object-fit: cover;
+			}
+
+			section {
+				padding: 20px 5vw 100px 5vw;
+				color: white !important;
+				font-size: 120%;
+			}
+			
+			h3 {
+				font-size: 200%;
+			}
+			
+			h3 img {
+				height: 1em;
+			}
+			
+			h2 img {
+				height: 2em;
+				vertical-align:top;
+				transform: translateY(-20%);
+			}
+			
+			a {
+				color: white !important;
+			}
+			a:hover {
+				text-decoration: none;
+			}
+			a:active {
+				text-decoration: underline;
+			}
+			
+			@media(max-width: 800px) {
+				h1 img{
+					width: 100vw;
+				}
+			}
+			
+			.bigBtn {
+				background: white;
+				border: 1px black solid;
+				color: black !important;
+				text-decoration: none !important;
+				padding: 10px 20px;
+				
+				transition: background 0.1s ease-in-out;
+			}
+			.bigBtn:hover {
+				background: #ccc;
+			}
+			.bigBtn:active {
+				background: #888;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><img src="https://onewordstudios.fun/sweetspace/l4.png" alt="sweetspace" /></h1>
+		<h2><img
+				src="https://onewordstudios.fun/sweetspace/onewordstudios_logo_invert.png"
+				alt="onewordstudios" /> Beta Program</h2>
+
+		<section>
+			<p>Thanks for testing our game! Join our testing program to get the latest beta builds here.</p>
+			
+			<div id="androidWrap">
+				<h3><img src="https://source.android.com/setup/images/Android_symbol_green_RGB.svg" alt="" /> Android Users</h3>
+				<p><a class="bigBtn" href="https://groups.google.com/forum/#!forum/onewordstudios/join">Join Android Beta</a></p>
+				<p>Follow the link above to join our testing Google Group.<br />Make sure you're logged in with the same Google Account you use on your Android phone. From there, join the group and follow the instructions to download the app from the Play Store.</p>
+			</div>
+				
+			<div id="iOSWrap">
+				<h3><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="" /> iOS Users</h3>
+				<p><a class="bigBtn" href="https://testflight.apple.com/join/uqLyFymS">Join iOS Beta</a></p>
+				<p>Follow the link above to join our TestFlight group.<br />Download the <a href="https://apps.apple.com/us/app/testflight/id899247664">TestFlight app</a> from the App Store and then click this link on your iOS device.</p>
+			</div>
+		</section>
+	</body>
+</html>
