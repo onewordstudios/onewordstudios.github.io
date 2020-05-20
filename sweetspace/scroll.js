@@ -19,7 +19,6 @@ function setupScroll() {
 	console.log("Going");
 	
 	window.onscroll = function () {
-		console.log("Hi");
 		if (!anim) {
 			requestAnimationFrame(setScroll);
 		}
@@ -27,8 +26,20 @@ function setupScroll() {
 	};
 	setScroll();
 	
+	window.setInterval(setScroll, 2000);
+	
 	function setScroll() {
 		const height = window.pageYOffset / window.innerHeight;
+		
+		if(height == 0) {
+			visible = true;
+			fade(1);
+			wrapEl.style.transform = `translateY(0)`;
+			header.style.transform = 'translateY(-100%)';
+			anim = false;
+			return;
+		}
+		
 		if (height <= 0.5) {
 			fade(1-(2*height));
 			visible = true;
@@ -48,6 +59,7 @@ function setupScroll() {
 			visible = false;
 			fade(0);
 			wrapEl.style.transform = "translateY(100%)";
+			header.style.transform = `translateY(0)`;
 		}
 		
 		anim = false;
