@@ -7,29 +7,51 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+		<script src="scroll.js"></script>
 
 		<style>
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 			body{
-				background-image:url('https://onewordstudios.fun/sweetspace_bg.png');
-				background-size: cover;
-				background-position: center;
+				background: rgb(1,2,43);
 				color:white;
 				font-family:"Montserrat", sans-serif !important;
 			}
 			
 			body,html{
 				margin:0;padding:0;
-				height: 100vh;
 				overflow-x:hidden;
+			}
+			
+			#bgStars {
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				object-fit: cover;
+				object-position: center center;
+				
+				pointer-events: none;
+				
+				animation-name: cycle;
+				animation-duration: 500s;
+				animation-iteration-count:infinite;
+				animation-timing-function: linear;
+				
+				z-index:-1;
+			}
+			
+			@keyframes cycle {
+				from {transform: rotate(0deg);}
+				to {transform:rotate(360deg);}
 			}
 
 			#splash_hero{
 				width:100%;height:100vh;
-				position:relative;
+				position:fixed;
 				overflow:hidden;
 				margin-bottom:0;
+				
+				z-index:-1;
 			}
 			#splash_hero img{
 				position:absolute;
@@ -62,7 +84,7 @@
 
 
 			#awardWinning{
-				position:absolute;
+				position:fixed;
 				bottom: 30px;
 				text-align:center;
 				margin:0 auto;
@@ -70,9 +92,9 @@
 				padding: 0 20px;
 			}
 			#studioName{
-				position:absolute;
-				top: -70px;
-				left: -40px;
+				position:fixed;
+				top: -60px;
+				left: -25px;
 				margin:0 auto;
 				padding: 0 20px;
 				transform: scale(0.7);
@@ -87,6 +109,67 @@
 				height: 100vh;
 				position:relative;
 			}
+			
+			
+			
+			
+			header {
+				background: white;
+				position: fixed;
+				top:0;
+				height: 100px;
+				width: 100%;
+				color: black;
+				overflow:hidden;
+				
+				transform: translateY(-100%);
+			}
+			
+			header img {
+				height: 100px;
+				transition: transform 0.2s ease-in-out;
+			}
+			
+			header a:first-child img, header a:last-child img{
+				width: 80%;
+				object-fit: contain;
+			}
+			
+			header a{
+				display: inline-block;
+				width: 20%;
+				text-align: center;
+				height: 100%;
+			}
+			
+			header a:first-child {
+				width: 40%;
+				text-align: left;
+				
+				background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1.0)), url('/flourish_bg.png');
+				background-position: center center;
+				background-size: cover;
+			}
+			
+			header a:last-child {
+				width: 40%;
+				text-align: right;
+				
+				background: linear-gradient(to left, rgba(255,255,255,0) 70%, rgba(255,255,255,1.0)), url('bg.png');
+				background-position: center center;
+				background-size: cover;
+			}
+			
+			header a:hover img {
+				transform: scale(1.02);
+			}
+			
+			header a:active img {
+				transform: scale(1);
+			}
+			
+			
+			
 			
 			.card {
 				text-align: center;
@@ -131,23 +214,9 @@
 			#bottom {
 				font-size: 200%;
 				text-align: center;
-				margin: 20vh 0 0 0;
+				margin: 30vh 0 30vh 0;
 			}
 			
-			#bottomHero {
-				width: 100%;
-			}
-			
-			#bottomStudioName {
-				bottom: 0;
-				width: 100%;
-				text-align: center;
-			}
-			
-			#bottomStudioName img{
-				width: 10vw;
-				transform: translateY(57vw);
-			}
 			
 			@media(max-width: 700px) {
 				.card img {
@@ -170,16 +239,40 @@
 				}
 				
 			}
+			
+			
+			
+			
+			.bigBtn {
+				background: white;
+				border: 1px black solid;
+				color: black !important;
+				text-decoration: none !important;
+				padding: 10px 20px;
+				
+				transition: background 0.1s ease-in-out;
+			}
+			.bigBtn:hover {
+				background: #ccc;
+			}
+			.bigBtn:active {
+				background: #888;
+			}
+			
+			#betaTest {
+				text-align: center;
+				margin-bottom: 30vh;
+				font-size: 130%;
+			}
 		</style>
 	</head>
 	<body>
+		<img src="imgs/splash/stars.png" alt="" id="bgStars" />
 		<section id="topMain">
 			<div id="splash_hero">
-				<div id="scene">
-					<!--img alt="" data-depth="0.01" src="l1.png" />
-					<!--img alt="" data-depth="0.02" src="l2.png" /-->
-					<img alt="" data-depth="0.03" src="l3.png" />
-					<img alt="SweetSpace" data-depth="0.04" src="l4.png" />
+				<div id="scene" style="text-align: center;">
+					<img alt="" data-depth="0.01" src="imgs/splash/landscape.png" />
+					<img alt="SweetSpace" data-depth="0.04" src="imgs/splash/logo.png" id="heroLogo" />
 				</div>
 			</div>
 			
@@ -188,8 +281,30 @@
 			<h2 id="awardWinning">A Cooperative Action Game for Android and iOS<br />Coming August 2020</h2>
 		</section>
 		
-		<section>
-			<p style="padding: 20vh 10vw;font-size: 150%;text-align:center;">Cosmic radiation is tearing through your ship, you and your friends are the only donuts who can stop it! Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
+		
+		
+		
+		<header id="mainHeader">
+			<a href="/flourish/">
+				<img src="/flourish.png" alt="Flourish" />
+			</a><a href="/">
+				<img src="/flourish/studioSmall.png" alt="onewordstudios" style="transform:scale(0.75)translateY(10%)" />
+			</a><a>
+				<img src="/sweetspace.png" alt="SweetSpace" />
+			</a>
+		</header>
+		
+		
+		
+		
+		
+		<section style="margin-top: 100vh;">
+			<p style="padding: 20vh 10vw;font-size: 150%;text-align:center;">Cosmic radiation is tearing through your ship; you and your friends are the only donuts who can stop it! Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
+		</section>
+		
+		<section id="betaTest">
+			<p>Want to help test the game before its official release?<br />Join the Beta today!</p>
+			<p><a href="https://beta.onewordstudios.fun" class="bigBtn">Join Beta</a></p>
 		</section>
 		
 		<section class="card leftCard">
@@ -227,9 +342,6 @@
 		</section>
 		
 		
-		<h2 id="bottomStudioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
-		<img src="https://camo.githubusercontent.com/05c2cf7ec17ec508315f8b8bb740e9df34925020/687474703a2f2f6f6e65776f726473747564696f732e66756e2f737765657473706163652f737765657473706163655f6865726f2e706e67" alt="SweetSpace" id="bottomHero" />
-		
 
 		<script>
 			const scene = document.getElementById('scene');
@@ -237,6 +349,7 @@
 				frictionX:0.5,
 				frictionY:0.5
 			});
+			setupScroll();
 		</script>
 	</body>
 </html>
