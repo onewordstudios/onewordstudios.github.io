@@ -6,6 +6,8 @@ function setupScroll() {
 		fadeEls.forEach(x => x.style.opacity = o);
 	}
 	
+	const header = document.getElementById("mainHeader");
+	
 	/**
 	 * Whether a new animation repaint has already been requested
 	 * @type {boolean}
@@ -34,7 +36,12 @@ function setupScroll() {
 		if(height > 0.5 && height <= 1.5) {
 			fade(0);
 			wrapEl.style.transform = `translateY(${(height - 0.5)*100}%)`;
+			header.style.transform = 'translateY(-100%)';
 			visible = true;
+		}
+		
+		if(height > 1 && height <= 1.5) {
+			header.style.transform = `translateY(${(1-(height-1)*2)*-100}%)`;
 		}
 		
 		if(visible && height > 1.5) {
