@@ -50,6 +50,8 @@
 				position:fixed;
 				overflow:hidden;
 				margin-bottom:0;
+				
+				z-index:-1;
 			}
 			#splash_hero img{
 				position:absolute;
@@ -212,7 +214,7 @@
 			#bottom {
 				font-size: 200%;
 				text-align: center;
-				margin: 20vh 0 0 0;
+				margin: 30vh 0 30vh 0;
 			}
 			
 			
@@ -236,6 +238,31 @@
 					margin-top: 100px;
 				}
 				
+			}
+			
+			
+			
+			
+			.bigBtn {
+				background: white;
+				border: 1px black solid;
+				color: black !important;
+				text-decoration: none !important;
+				padding: 10px 20px;
+				
+				transition: background 0.1s ease-in-out;
+			}
+			.bigBtn:hover {
+				background: #ccc;
+			}
+			.bigBtn:active {
+				background: #888;
+			}
+			
+			#betaTest {
+				text-align: center;
+				margin-bottom: 30vh;
+				font-size: 130%;
 			}
 		</style>
 	</head>
@@ -273,6 +300,11 @@
 		
 		<section style="margin-top: 100vh;">
 			<p style="padding: 20vh 10vw;font-size: 150%;text-align:center;">Cosmic radiation is tearing through your ship; you and your friends are the only donuts who can stop it! Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
+		</section>
+		
+		<section id="betaTest">
+			<p>Want to help test the game before its official release?<br />Join the Beta today!</p>
+			<p><a href="https://beta.onewordstudios.fun" class="bigBtn">Join Beta</a></p>
 		</section>
 		
 		<section class="card leftCard">
