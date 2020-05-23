@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>onewordstudios</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="SweetSpace, an upcoming multiplayer cooperative action game for mobile devices"/>
+		<link rel="icon" href="sweetspace/favicon.ico" type="image/x-icon"/>
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+			body{
+				background: url('sweetspace/bg.png');
+				background-position: center center;
+				background-size:cover;
+				background-attachment: fixed;
+				color:white;
+				font-family:"Montserrat", sans-serif !important;
+				
+				text-align: center;
+			}
+			
+			body,html{
+				margin:0;padding:0;
+				overflow-x:hidden;
+			}
+			
+			
+			.bigBtn {
+				background: white;
+				border: 1px black solid;
+				color: black !important;
+				text-decoration: none !important;
+				padding: 10px 20px;
+				
+				transition: background 0.1s ease-in-out;
+			}
+			.bigBtn:hover {
+				background: #ccc;
+			}
+			.bigBtn:active {
+				background: #888;
+			}
+			
+			
+			#gameLogo {
+				max-width: 700px;
+				width: 60%;
+				margin: 10vh 0 2vh 0;
+			}
+			
+			section {
+				font-size: 120%;
+				background: rgba(0,0,0,0.5);
+				padding: 1px 0 40px 0;
+				width: 80%;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#mainBtn {
+				font-size: 80%;
+				
+				margin-top: 20vh;
+			}
+			
+			#homeLink img {
+				width: 150px;
+			}
+			
+			#homeLink {
+				position: fixed;
+				top:0;left:40px;
+			}
+			
+			@media(max-width: 800px) {
+				#homeLink {
+					position: static;
+				}
+				#gameLogo {
+					width: 80%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="sweetspace.png" alt="SweetSpace" id="gameLogo" />
+		<section>
+			<h1>Here for the GDIAC Showcase?</h1>
+			<p>Download SweetSpace for Android and iOS here:</p>
+			<p><a class="bigBtn" href="https://beta.onewordstudios.fun/">Download SweetSpace</a></p>
+			
+			
+			<p id="mainBtn"><a class="bigBtn" href="home.html">Proceed to Main Site</a></p>
+		</section>
+			<a href="home.html" id="homeLink"><img src="sweetspace/onewordstudios_logo_invert.png" /></a>
+	</body>
+</html>

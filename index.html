@@ -3,96 +3,140 @@
 	<head>
 		<title>onewordstudios</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="SweetSpace, an upcoming multiplayer cooperative action game for mobile devices"/>
-		<link rel="icon" href="sweetspace/favicon.ico" type="image/x-icon"/>
+		<meta name="description" content="Official website of onewordstudios"/>
+		<link rel="shortcut icon" href="/favicon.png"/>
 		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
 		<style>
 			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+			
+			body, html {
+				margin:0;padding:0;
+				overflow:hidden;
+			}
 
-			body{
-				background: url('sweetspace/bg.png');
-				background-position: center center;
-				background-size:cover;
-				background-attachment: fixed;
+			body {
+				background:black;
 				color:white;
 				font-family:"Montserrat", sans-serif !important;
 				
-				text-align: center;
-			}
-			
-			body,html{
-				margin:0;padding:0;
-				overflow-x:hidden;
-			}
-			
-			
-			.bigBtn {
-				background: white;
-				border: 1px black solid;
-				color: black !important;
-				text-decoration: none !important;
-				padding: 10px 20px;
-				
-				transition: background 0.1s ease-in-out;
-			}
-			.bigBtn:hover {
-				background: #ccc;
-			}
-			.bigBtn:active {
-				background: #888;
-			}
-			
-			
-			#gameLogo {
-				max-width: 700px;
-				width: 60%;
-				margin: 10vh 0 2vh 0;
+				user-select: none;
 			}
 			
 			section {
-				font-size: 120%;
-				background: rgba(0,0,0,0.5);
-				padding: 1px 0 40px 0;
-				width: 80%;
-				margin: 0 auto;
+				width:100%;
+				height: 100vh;
+			}
+			
+			header {
+				height: 20vh;
+				text-align: center;
+				background: linear-gradient(to top, rgba(0,0,0,0),rgba(0,0,0,1));
+				
+				position: fixed;
+				top:0;left:0;
+				width: 100%;
+				
+				pointer-events: none;
+				
+				z-index: 4;
+			}
+			
+			#studio {
+				height: 150%;
+				position:relative;
+				top: -25%;
+			}
+			
+			a{
+				width: 50%;
+				display:inline-block;
+				height:100%;
 				position: relative;
 			}
 			
-			#mainBtn {
-				font-size: 80%;
+			a img{
+				position:absolute;
+				top:0;left:0;
+			}
+			
+			a img:first-child{
+				width:100%;
+				height: 100%;
+				object-fit:cover;
+			}
+			
+			a img:last-child {
+				width:100%;
+				height:100%;
+				object-fit: contain;
 				
-				margin-top: 20vh;
+				transform:scale(1);
+				transition: transform 0.3s ease-in-out;
 			}
 			
-			#homeLink img {
-				width: 150px;
+			a:hover img:last-child{
+				transform: scale(1.05);
 			}
 			
-			#homeLink {
-				position: fixed;
-				top:0;left:40px;
+			a:active img:last-child{
+				transform: scale(0.95);
+				transition: transform 0.1s ease-in-out;
 			}
 			
-			@media(max-width: 800px) {
-				#homeLink {
-					position: static;
+			a h2 {
+				position: absolute;
+				color: white;
+				bottom: 7vh;
+				width: 100%;
+				text-align: center;
+				z-index: 3;
+				
+				transform: translateY(0);
+				transition: transform 0.3s ease-in-out;
+			}
+			
+			a span {
+				display: block;
+				padding: 0 10vw;
+				font-size: 85%;
+				margin-top: 3vh;
+				height: 5vh;
+				
+				opacity: 0;
+				transition: opacity 0.3s ease-in-out;
+			}
+			
+			a:hover h2 {
+				transform: translateY(-3vh);
+			}
+			
+			a:hover span {
+				opacity: 1;
+			}
+			
+			@media(max-width: 700px) {
+				section a {
+					display: block;
+					width: 100%;
+					height: 50%;
 				}
-				#gameLogo {
-					width: 80%;
+				
+				a h2 {
+					bottom: 2vh;
 				}
 			}
+
 		</style>
 	</head>
 	<body>
-		<img src="sweetspace.png" alt="SweetSpace" id="gameLogo" />
+		<header>
+			<img src="sweetspace/onewordstudios_logo_invert.png" alt="onewordstudios" id="studio" />
+		</header>
 		<section>
-			<h1>Here for the GDIAC Showcase?</h1>
-			<p>Download SweetSpace for Android and iOS here:</p>
-			<p><a class="bigBtn" href="https://beta.onewordstudios.fun/">Download SweetSpace</a></p>
-			
-			
-			<p id="mainBtn"><a class="bigBtn" href="home.html">Proceed to Main Site</a></p>
+			<a href="flourish/"><img src="flourish_bg.png" alt="" /><h2>Survive. Grow. Thrive.<span>The award-winning strategy game for PC and Mac</span></h2><img src="flourish_logo.png" alt="Flourish" /></a><!--
+			--><a href="sweetspace/"><img src="sweetspace_bg.png" alt="" /><h2>Coming Soon<span>to Android and iOS</span></h2><img src="sweetspace_logo.png" alt="SweetSpace" /></a>
 		</section>
-			<a href="home.html" id="homeLink"><img src="sweetspace/onewordstudios_logo_invert.png" /></a>
 	</body>
 </html>
