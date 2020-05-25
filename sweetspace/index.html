@@ -10,6 +10,7 @@
 		<script src="scroll.js"></script>
 		
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+		<link href="/header.css" rel="stylesheet">
 
 		<style>
 			:root {
@@ -126,62 +127,7 @@
 			
 			
 			header {
-				background: white;
-				position: fixed;
-				top:0;
-				height: 100px;
-				width: 100%;
-				color: black;
-				overflow:hidden;
-				
-				box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-				
-				z-index: 100;
-				
 				transform: translateY(-100%);
-			}
-			
-			header img {
-				height: 100px;
-				transition: transform 0.2s ease-in-out;
-			}
-			
-			header a:first-child img, header a:last-child img{
-				width: 80%;
-				object-fit: contain;
-			}
-			
-			header a{
-				display: inline-block;
-				width: 20%;
-				text-align: center;
-				height: 100%;
-			}
-			
-			header a:first-child {
-				width: 40%;
-				text-align: left;
-				
-				background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1.0)), url('/flourish_bg.png');
-				background-position: center center;
-				background-size: cover;
-			}
-			
-			header a:last-child {
-				width: 40%;
-				text-align: right;
-				
-				background: linear-gradient(to left, rgba(255,255,255,0) 70%, rgba(255,255,255,1.0)), url('bg.png');
-				background-position: center center;
-				background-size: cover;
-			}
-			
-			header a:hover img {
-				transform: scale(1.02);
-			}
-			
-			header a:active img {
-				transform: scale(1);
 			}
 			
 			
