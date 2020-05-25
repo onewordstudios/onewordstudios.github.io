@@ -10,11 +10,23 @@
 		<script src="scroll.js"></script>
 
 		<style>
-			@import url('https://fonts.googleapis.com/css?family=Montserrat');
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&display=swap');
 
+			:root {
+				--bg-blue: rgb(1, 2, 43);
+				
+				--blue: rgb(52, 127, 239);
+				--blue-border: rgb(145, 214, 226);
+				
+				--purple: rgb(164, 106, 227);
+				--purple-border: rgb(246, 210, 255);
+				
+				--yellow: rgb(248, 231, 78);
+			}
+			
 			body{
-				background: rgb(1,2,43);
-				color:white;
+				background: var(--bg-blue);
+				color: white;
 				font-family:"Montserrat", sans-serif !important;
 			}
 			
@@ -122,6 +134,8 @@
 				color: black;
 				overflow:hidden;
 				
+				z-index: 100;
+				
 				transform: translateY(-100%);
 			}
 			
@@ -197,6 +211,15 @@
 			.card h2 {
 				clear:both;
 				font-size: 300%;
+				
+				font-weight: 900;
+				font-style: italic;
+				color: var(--yellow);
+				
+				background: var(--purple);
+				padding: 20px 0;
+				border-radius: 70px;
+				border: 10px var(--purple-border) solid;
 			}
 			
 			#challenges {
@@ -270,6 +293,59 @@
 				margin-bottom: 30vh;
 				font-size: 130%;
 			}
+			
+			#heroBlurb {
+				margin-top: 120vh;
+				margin-bottom: 20vh;
+				position: relative;
+				padding: 80vh 0 50vh 0;
+			}
+			#heroBlurb p {
+				padding: 10vh 10vw;
+				font-size: 150%;
+				text-align:center;
+				
+				background: rgb(52, 127, 239);
+				border-top: rgb(145, 214, 226) 10px solid;
+				border-bottom: rgb(145, 214, 226) 10px solid;
+			}
+			#heroBlurb span {
+				font-weight: 900;
+				font-style: italic;
+				color: var(--yellow);
+			}
+			
+			#heroBlurb div {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				left:0;
+				top:0;
+				z-index: -1;
+				clip: rect(0, auto, auto, 0);
+			}
+			
+			#heroBlurb video {
+				position: fixed;
+				top:0;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				transform:translateX(-50%);
+				z-index: -2;
+			}
+			
+			
+			#trailer {
+				margin-bottom: 20vh; padding: 0 10vw;
+			}
+			
+			#trailer iframe {
+				width: calc(100% - 20px); height: calc(45vw - 20px);cursor:pointer;
+				
+				border: 10px white solid;
+				box-shadow: 10px 10px 10px black;
+			}
 		</style>
 	</head>
 	<body>
@@ -301,15 +377,15 @@
 		</header>
 		
 		
-		
-		
-		
-		<section style="margin-top: 100vh;">
-			<p style="padding: 20vh 10vw;font-size: 150%;text-align:center;">Cosmic radiation is tearing through your ship; you and your friends are the only donuts who can stop it! Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
+		<section id="heroBlurb">
+			<div><video autoplay loop muted preload="auto">
+				<source src="vid/gameplay.mp4" type="video/mp4">
+			</video></div>
+			<p><span>Cosmic radiation is tearing through your ship<br />You and your friends are the only "donauts" who can stop it!<br /></span>Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
 		</section>
-		
-		<section style="margin-bottom: 20vh; padding: 0 10vw;">
-			<iframe style="width: 100%; height: 45vw;cursor:pointer;" src="https://www.youtube-nocookie.com/embed/VLakgX_BCMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			
+		<section id="trailer">
+			<iframe frameborder="0" src="https://www.youtube-nocookie.com/embed/VLakgX_BCMo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</section>
 		
 		<section id="betaTest">
@@ -320,7 +396,7 @@
 		<section class="card leftCard">
 			<h2>Tilt</h2>
 			<img src="imgs/tilt.png" alt="" />
-			<p>Tilt your phone left and right to roll your small donut around the ship. Roll over breaches of your color to fix them.</p>
+			<p>Tilt your phone left and right to roll your donut around the ship. Roll back-and-forth over breaches of your color to fix them.</p>
 		</section>
 		
 		<section class="card rightCard">
