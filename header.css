@@ -48,6 +48,7 @@ header a:first-child {
 header a:first-child img {
 	position: absolute;
 	height: initial;
+	max-height: 450px;
 	width: 80%;
 	top: 50%;
 	transform:translateY(-50%);
