@@ -54,3 +54,9 @@ header a:hover img {
 header a:active img {
 	transform: scale(1);
 }
+
+@media(max-width: 700px) {
+	header a:nth-child(2) img {
+		display: none;
+	}
+}
