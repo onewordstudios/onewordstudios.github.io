@@ -226,24 +226,36 @@
 				padding: 0 5vw;
 			}
 			#challenges div{
-				width: 50%; display:inline-block;
+				width: calc(50% - 40px); display:inline-block;
 				text-align: center;
 				vertical-align: top;
+				
+				background-color: var(--blue);
+				border: 10px var(--blue-border) solid;
+				border-radius: 40px;
+				margin-right: 20px;
+				margin-bottom: 20px;
 			}
 			#challenges h2 {
 				font-weight: 900;
 				font-style: italic;
+				
+				font-size: 180%;
 				
 				color: var(--yellow);
 			}
 			#challenges div img {
 				max-width: 90%;
 			}
+			#challenges div p {
+				font-size: 125%;
+			}
 			
 			#bottom {
 				font-size: 200%;
 				text-align: center;
-				margin: 30vh 0 30vh 0;
+				margin: calc(50vh - 91px) 0;
+				white-space: nowrap;
 			}
 			
 			
@@ -260,7 +272,9 @@
 				
 				#challenges div {
 					display: block;
-					width: 100%;
+					width: calc(100% - 20px);
+					margin-right: 0;
+					margin-bottom: 40px;
 				}
 				
 				#challenges {
@@ -273,8 +287,10 @@
 				header a:nth-child(2) img {
 					display: none;
 				}
+				#bottom {
+					font-size: 150%;
+				}
 			}
-			
 			
 			
 			
@@ -366,7 +382,7 @@
 			
 			<h2 id="studioName"><a href="/"><img src="onewordstudios_logo_invert.png" alt="onewordstudios" /></a></h2>
 	
-			<h2 id="awardWinning">A Cooperative Action Game for Android and iOS<br />Coming August 2020</h2>
+			<h2 id="awardWinning">A Cooperative Action Game for 2 to 6 Players<br />Coming Fall 2020 to Android &amp; iOS</h2>
 		</section>
 		
 		
@@ -424,7 +440,7 @@
 				<p>Certain breaches can only be patched by certain members</p>
 			</div><div>
 				<h2>Locked Doors</h2>
-				<img src="imgs/doors.svg" alt="" />
+				<img src="imgs/doors.png" alt="" />
 				<p>Doors can only be opened with the help of two members</p>
 			</div><div>
 				<h2>Engine Malfunctions</h2>
