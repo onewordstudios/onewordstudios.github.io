@@ -16,8 +16,6 @@ function setupScroll() {
 	
 	let visible = true;
 	
-	console.log("Going");
-	
 	window.onscroll = function () {
 		if (!anim) {
 			requestAnimationFrame(setScroll);
