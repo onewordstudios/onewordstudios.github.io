@@ -42,6 +42,21 @@ header a:first-child {
 	background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1.0)), url('/flourish_bg.png');
 	background-position: center center;
 	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+header a:first-child img {
+	position: absolute;
+	height: initial;
+	width: 80%;
+	top: 50%;
+	transform:translateY(-50%);
+}
+header a:first-child:hover img {
+	transform:translateY(-50%)scale(1.02);
+}
+header a:first-child:active img {
+	transform:translateY(-50%)scale(1);
 }
 
 header a:last-child {
