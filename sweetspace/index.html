@@ -295,10 +295,13 @@
 			#heroBlurb video {
 				position: fixed;
 				top:0;
-				left: 50%;
-				min-width: 100%;
-				min-height: 100%;
-				transform:translateX(-50%);
+				left: 0;
+				width: 100%;
+				height: 100%;
+				
+				object-fit: cover;
+				object-position: center;
+				
 				z-index: -2;
 			}
 			
@@ -345,8 +348,9 @@
 		
 		
 		<section id="heroBlurb">
-			<div><video autoplay loop muted preload="auto">
+			<div><video autoplay loop muted preload="auto" poster="vid/gameplay.png">
 				<source src="vid/gameplay.mp4" type="video/mp4">
+				<img src="vid/gameplay.png" alt="" />
 			</video></div>
 			<p><span>Cosmic radiation is tearing through your ship<br />You and your friends are the only &#8220;donauts&#8221; who can stop it!<br /></span>Donut waste time as you roll and patch your way through these bite-sized holes in your ship. You’ll need to communicate and cooperate to achieve your dream of a sweet, sweet space.</p>
 		</section>
